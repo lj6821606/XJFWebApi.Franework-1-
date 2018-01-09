@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "角色";
+}
+
+<div class="weui-cells weui-cells_form">
+    <div class="weui-cell">
+        <div class="weui-cell__hd"><label class="weui-label">角色名称</label></div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" id="rolename" name="rolename" placeholder="请输入角色名称">
+        </div>
+    </div>
+    <div class="weui-cell">
+        <div class="weui-cell__hd"><label class="weui-label">角色备注</label></div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" id="roleremarks" name="roleremarks" placeholder="请输入角色备注">
+        </div>
+    </div>
+    <div class="weui-cell">
+        <div class="weui-cell__hd"><label class="weui-label">排序号</label></div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" id="storenum" name="storenum" type="number" pattern="[0-9]" placeholder="请输入排序号">
+        </div>
+    </div>
+</div>
+
+<a href="javascript:;" class="weui-btn weui-btn_primary btn_ok" style="width:80%;margin:auto;margin-top:1.5em;">确定</a>
+<a href="javascript:;" class="weui-btn weui-btn_warn" style="width:80%;margin:auto;margin-top:1.5em;">取消</a>
+<script>
+    $(document).ready(function () {
+        $(".btn_ok").click(function () {
+            var rolename = $("#rolename").val();
+            var roleremarks = $("#roleremarks").val();
+            var storenum = $("#storenum").val();
+            if (rolename == undefined || rolename == null || rolename == "") {
+                $.toast("请输入角色名称", "cancel");
+                return false;
+            }
+            else if (storenum == undefined || storenum == null || storenum == "") {
+                $.toast("请输入排序编号", "cancel");
+                return false;
+            }
+            $.ajax({
+                type: "Post",
+                dataType: "Json",
+                url: "http://localhost:50230/api/Role/AddRole",
+                data: {
+                    XJFRoleName: rolename,
+                    XJFRoleRemarks: roleremarks,
+                    XJFStort: storenum
+                },
+                success: function (result) {
+                    console.log(result);
+                    $.toast("操作成功", "success");
+                },
+                error: function (result) {
+                    alert("服务器异常！");
+                }
+            });
+        });
+    });
+</script>

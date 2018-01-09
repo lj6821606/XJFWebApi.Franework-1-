@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新家风短信平台 - @ViewBag.Title</title>
+    <link href="~/Content/weui.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery-weui.min.css" rel="stylesheet" />
+    @Styles.Render("~/Content/css")
+    @*@Scripts.Render("~/bundles/modernizr")*@
+    @Scripts.Render("~/bundles/jquery")
+    @*@Scripts.Render("~/bundles/bootstrap")*@
+    <style>
+        .weui-mask_transparent {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body ontouchstart>
+    @RenderBody()
+</body>
+</html>
+<script src="~/Scripts/city-picker.min.js"></script>
+<script src="~/Scripts/jquery-weui.min.js"></script>
+<script src="~/Scripts/swiper.min.js"></script>
+<script src="~/Scripts/XJFApi.js"></script>

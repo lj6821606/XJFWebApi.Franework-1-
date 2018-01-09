@@ -1,0 +1,6 @@
+F:\VSProject\XJFWebApi.Franework\Request.Models\bin\Debug\Request.Models.dll
+F:\VSProject\XJFWebApi.Franework\Request.Models\bin\Debug\Request.Models.pdb
+F:\VSProject\XJFWebApi.Franework\Request.Models\obj\Debug\Request.Models.csprojResolveAssemblyReference.cache
+F:\VSProject\XJFWebApi.Franework\Request.Models\obj\Debug\Request.Models.csproj.CoreCompileInputs.cache
+F:\VSProject\XJFWebApi.Franework\Request.Models\obj\Debug\Request.Models.dll
+F:\VSProject\XJFWebApi.Franework\Request.Models\obj\Debug\Request.Models.pdb

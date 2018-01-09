@@ -1,0 +1,109 @@
+﻿@{
+    ViewBag.Title = "管理员";
+}
+<div class="weui-cells weui-cells_form">
+    <div class="weui-cell">
+        <div class="weui-cell__hd"><label class="weui-label">帐号</label></div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" id="loginname" name="loginname" onkeyup="value=value.replace(/[^\w\.\/]/ig,'')" placeholder="帐号">
+        </div>
+    </div>
+    <div class="weui-cell">
+        <div class="weui-cell__hd"><label class="weui-label">手机</label></div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" id="phone" name="phone" onkeypress="return event.keyCode>=48&&event.keyCode<=57" ng-pattern="/[^a-zA-Z]/" maxlength="11" placeholder="手机">
+        </div>
+    </div>
+    <div class="weui-cell">
+        <div class="weui-cell__hd"><label class="weui-label">邮箱</label></div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" id="email" name="email" placeholder="邮箱">
+        </div>
+    </div>
+    <div class="weui-cell">
+        <div class="weui-cell__hd"><label class="weui-label">密码</label></div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" id="password1" name="password1" type="password" maxlength="21" placeholder="密码">
+        </div>
+    </div>
+    <div class="weui-cell">
+        <div class="weui-cell__hd"><label class="weui-label">确认密码</label></div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" id="password2" name="password2" type="password" maxlength="21" placeholder="确认密码">
+        </div>
+    </div>
+    <div class="weui-cell">
+        <div class="weui-cell__hd"><label class="weui-label">角色</label></div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" id="roleid" name="roleid" readonly>
+        </div>
+    </div>
+</div>
+
+<a href="javascript:;" class="weui-btn weui-btn_primary btn_ok" style="width:80%;margin:auto;margin-top:1.5em;">确定</a>
+<a href="javascript:;" class="weui-btn weui-btn_warn" style="width:80%;margin:auto;margin-top:1.5em;">取消</a>
+
+<script>
+    $(document).ready(function () {
+        var rolelist = GetListsXJFRole(100, 1);
+        $(".btn_ok").click(function () {
+            var XJFAdminLgoinName = $("#loginname").val();//登录名
+            var XJFAdminPhone = $("#phone").val();//手机号码
+            var XJFAdminEmall = $("#email").val();//邮箱
+            var XJFAdminPassWord = $("#password1").val();//用户密码
+            var XJFAdminPassWord2 = $("#password2").val();
+            var XJFRoleID = $("#roleid").attr("data-values");
+            if (!GetValiTxt(XJFAdminLgoinName, "登录名")) {
+                return false;
+            }
+            else if (!GetValiTxt(XJFAdminPhone, "手机号码")) {
+                return false;
+            }
+            else if (!GetValiTxt(XJFAdminEmall, "邮箱")) {
+                return false;
+            }
+            else if (!GetValiEmail(XJFAdminEmall)) {
+                return false;
+            }
+            else if (!GetValiTxt(roleid, "角色")) {
+                return false;
+            }
+            else if (!GetValiTxt(XJFAdminPassWord, "密码")) {
+                return false;
+            }
+            else if (!GetValiTxt(XJFAdminPassWord2, "确认密码")) {
+                return false;
+            }
+            else if (XJFAdminPassWord != XJFAdminPassWord2) {
+                $.toast("两次密码输入不相同！", "cancel");
+                return false;
+            }
+            else if (XJFAdminPassWord.length < 6 || XJFAdminPassWord.length > 21) {
+                $.toast("密码必须在6——21位之间！", "cancel");
+                return false;
+            }
+            var data = {
+                XJFAdminLgoinName: XJFAdminLgoinName,
+                XJFAdminPhone: XJFAdminPhone,
+                XJFAdminEmall: XJFAdminEmall,
+                XJFAdminPassWord: XJFAdminPassWord,
+                XJFRoleID: XJFRoleID
+            };
+            var result = addXJFAdmin(data);
+        });
+    });
+    function successGet(result) {
+        var itemstr = new Array();
+        for (var i = 0; i < result.Data.length; i++) {
+            var str = {};
+            str.title = result.Data[i].XJFRoleName;
+            str.value = result.Data[i].XJFRoleID;
+            itemstr.push(str);
+            //itemstr.push(title:  result.Data[i].XJFAdminName, value:result.Data[i].XJFAdminID);
+        };
+        $("#roleid").select({
+            title: "选择角色",
+            items: itemstr
+        });
+    };
+</script>

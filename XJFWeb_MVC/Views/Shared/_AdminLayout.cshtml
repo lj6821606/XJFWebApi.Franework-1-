@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新家风短信平台 - @ViewBag.Title</title>
+    <link href="~/Content/weui.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery-weui.min.css" rel="stylesheet" />
+
+    @Styles.Render("~/Content/css")
+    @*@Scripts.Render("~/bundles/modernizr")*@
+    @Scripts.Render("~/bundles/jquery")
+    @*@Scripts.Render("~/bundles/bootstrap")*@
+    <style>
+        .weui-mask_transparent {
+            opacity: 0;
+        }
+
+        .weui-form-preview {
+            border-top: 3px solid #d9d9d9;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
+</head>
+<body ontouchstart>
+    <h1 style="text-align:center;color:#0bb20c;">@ViewBag.TItle</h1>
+    <div style="text-align:right;">
+        <a href="@ViewBag.Add" class="weui-btn weui-btn_mini weui-btn_primary"><i class="fa fa-plus"></i>  新增</a>
+    </div>
+    @RenderBody()
+</body>
+</html>
+<script src="~/Scripts/jquery-weui.min.js"></script>
+<script src="~/Scripts/swiper.min.js"></script>

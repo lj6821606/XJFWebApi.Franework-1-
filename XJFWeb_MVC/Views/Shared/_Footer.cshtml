@@ -1,0 +1,49 @@
+﻿<div class="weui-tabbar">
+    <a href="#tab1" class="weui-tabbar__item weui-bar__item--on first">
+        <div class="weui-tabbar__icon">
+            <img class="tab_img" src="~/Images/icon8.png" data-img="/Images/icon2.png" data-img-statu="0" alt="新家风">
+        </div>
+        <p class="weui-tabbar__label">菜单</p>
+    </a>
+    <a href="#tab2" class="weui-tabbar__item">
+        <div class="weui-tabbar__icon">
+            <img class="tab_img" src="~/Images/icon4.png" data-img="/Images/icon5.png" data-img-statu="0" alt="新家风">
+        </div>
+        <p class="weui-tabbar__label">通讯录</p>
+    </a>
+    <a href="#tab3" class="weui-tabbar__item">
+        <div class="weui-tabbar__icon">
+            <img class="tab_img" src="~/Images/icon6.png" data-img="/Images/icon7.png" data-img-statu="0" alt="新家风">
+        </div>
+        <p class="weui-tabbar__label">消息模版</p>
+    </a>
+    <a href="#tab4" class="weui-tabbar__item">
+        <div class="weui-tabbar__icon">
+            <img class="tab_img" src="~/Images/icon9.png" data-img="/Images/icon10.png" data-img-statu="0" alt="新家风">
+        </div>
+        <p class="weui-tabbar__label">我的</p>
+    </a>
+</div>
+<script>
+    $(document).ready(function () {
+        $(".weui-tabbar__item").click(function () {
+            var obj = $(this).find(".tab_img");
+            if ($(obj).attr("data-img-statu") == "1")
+                return false;
+            $(".weui-tabbar__item").each(function () {
+                var objimg = $(this).find(".tab_img");
+                if ($(objimg).attr("data-img-statu") == "1") {
+                    var old = $(objimg).attr("data-img");
+                    $(objimg).attr("data-img", $(objimg).attr("src"));
+                    $(objimg).attr("src", old);
+                    $(objimg).attr("data-img-statu", 0);
+                }
+            });
+            var oldsrc = $(obj).attr("data-img");
+            $(obj).attr("data-img", $(obj).attr("src"));
+            $(obj).attr("src", oldsrc);
+            $(obj).attr("data-img-statu", "1");
+        });
+        $(".first").click();
+    });
+</script>

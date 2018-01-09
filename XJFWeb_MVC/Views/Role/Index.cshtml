@@ -1,0 +1,90 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "角色管理";
+    ViewBag.Add = "/Role/AddRole";
+}
+@*<style>
+    .weui-form-preview {
+        border-top: 3px solid #d9d9d9;
+    }
+</style>
+<h1 style="text-align:center;color:#0bb20c;">角色管理</h1>
+<a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_primary">新增</a>*@
+<div class="content">
+    @*<div class="weui-form-preview">
+            <div class="weui-form-preview__hd">
+                <label class="weui-form-preview__label">角色名称</label>
+                <em class="weui-form-preview__value">测试</em>
+            </div>
+            <div class="weui-form-preview__bd">
+                <div class="weui-form-preview__item">
+                    <label class="weui-form-preview__label">角色排序号</label>
+                    <span class="weui-form-preview__value">2</span>
+                </div>
+                <div class="weui-form-preview__item">
+                    <label class="weui-form-preview__label">角色备注</label>
+                    <span class="weui-form-preview__value">很长很长的名字很长很长的名字很长很长的名字很长很长的名字很长很长的名字</span>
+                </div>
+            </div>
+            <div class="weui-form-preview__ft">
+                <a class="weui-form-preview__btn weui-form-preview__btn_default" href="javascript:">删除</a>
+                <button type="submit" class="weui-form-preview__btn weui-form-preview__btn_primary" href="javascript:">查看</button>
+            </div>
+        </div>*@
+</div>
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            type: "Post",
+            dataType: "Json",
+            url: "http://localhost:50230/api/Role/GetList",
+            data: {
+                PageSize: 10,
+                PageNum: 1,
+                Data: {
+                    //XJFRoleName: "1231231"
+                }
+            },
+            success: function (result) {
+                console.log(result);
+                if (result.Code != "200") {
+                    alert(result.Message);
+                    return false;
+                }
+                var html = "";
+                for (var i = 0; i < result.Data.length; i++) {
+                    html += "<div class='weui-form-preview'>\
+                    <div class='weui-form-preview__hd'>\
+                        <label class='weui-form-preview__label'>角色名称</label>\
+                        <em class='weui-form-preview__value'>"+ result.Data[i].XJFRoleName + "</em>\
+                    </div>\
+                    <div class='weui-form-preview__bd'>\
+                        <div class='weui-form-preview__item'>\
+                            <label class='weui-form-preview__label'>角色排序号</label>\
+                            <span class='weui-form-preview__value'>"+ result.Data[i].XJFStort + "</span>\
+                        </div>\
+                        <div class='weui-form-preview__item'>\
+                            <label class='weui-form-preview__label'>角色备注</label>\
+                            <span class='weui-form-preview__value'>"+ result.Data[i].XJFRoleRemarks + "</span>\
+                        </div>\
+                        <div class='weui-form-preview__item'>\
+                            <label class='weui-form-preview__label'>创建时间</label>\
+                            <span class='weui-form-preview__value'>"+ new Date(result.Data[i].XJFCreateTime).toLocaleString() + "</span>\
+                        </div>\
+                    </div>\
+                    <div class='weui-form-preview__ft'>\
+                        <a class='weui-form-preview__btn weui-form-preview__btn_warn' href='javascript:'>删除</a>\
+                    </div>\
+                </div > ";
+                }
+                $(".content").append(html);
+                //$.toast("操作成功", "success");
+            },
+            error: function (result) {
+                alert("服务器异常！");
+            }
+        });
+    });
+</script>
+

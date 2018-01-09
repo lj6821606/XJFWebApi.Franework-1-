@@ -1,0 +1,9 @@
+F:\VSProject\XJFWebApi.Franework\LogHelper\bin\Debug\Log4net.config
+F:\VSProject\XJFWebApi.Franework\LogHelper\bin\Debug\LogTools.dll
+F:\VSProject\XJFWebApi.Franework\LogHelper\bin\Debug\LogTools.pdb
+F:\VSProject\XJFWebApi.Franework\LogHelper\bin\Debug\log4net.dll
+F:\VSProject\XJFWebApi.Franework\LogHelper\bin\Debug\log4net.xml
+F:\VSProject\XJFWebApi.Franework\LogHelper\obj\Debug\LogTools.csprojResolveAssemblyReference.cache
+F:\VSProject\XJFWebApi.Franework\LogHelper\obj\Debug\LogTools.csproj.CoreCompileInputs.cache
+F:\VSProject\XJFWebApi.Franework\LogHelper\obj\Debug\LogTools.dll
+F:\VSProject\XJFWebApi.Franework\LogHelper\obj\Debug\LogTools.pdb

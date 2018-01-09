@@ -1,0 +1,12 @@
+F:\VSProject\XJFWebApi.Franework\XJFWeb_Angularjs\bin\XJFWeb_Angularjs.dll.config
+F:\VSProject\XJFWebApi.Franework\XJFWeb_Angularjs\bin\XJFWeb_Angularjs.dll
+F:\VSProject\XJFWebApi.Franework\XJFWeb_Angularjs\bin\XJFWeb_Angularjs.pdb
+F:\VSProject\XJFWebApi.Franework\XJFWeb_Angularjs\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\VSProject\XJFWebApi.Franework\XJFWeb_Angularjs\bin\System.Web.Razor.dll
+F:\VSProject\XJFWebApi.Franework\XJFWeb_Angularjs\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\VSProject\XJFWebApi.Franework\XJFWeb_Angularjs\bin\System.Web.Razor.xml
+F:\VSProject\XJFWebApi.Franework\XJFWeb_Angularjs\bin\zh-Hans\System.Web.Razor.resources.dll
+F:\VSProject\XJFWebApi.Franework\XJFWeb_Angularjs\obj\Debug\XJFWeb_Angularjs.csprojResolveAssemblyReference.cache
+F:\VSProject\XJFWebApi.Franework\XJFWeb_Angularjs\obj\Debug\XJFWeb_Angularjs.csproj.CoreCompileInputs.cache
+F:\VSProject\XJFWebApi.Franework\XJFWeb_Angularjs\obj\Debug\XJFWeb_Angularjs.dll
+F:\VSProject\XJFWebApi.Franework\XJFWeb_Angularjs\obj\Debug\XJFWeb_Angularjs.pdb

@@ -1,0 +1,85 @@
+﻿@{
+    ViewBag.Title = "首页";
+}
+<div class="weui-tab">
+    <div class="weui-tab__bd">
+        <div id="tab1" class="weui-tab__bd-item weui-tab__bd-item--active">
+            <div style="text-align:center;">
+                <img src="~/Images/img1.png" width="120" height="120" />
+                <div style="margin-bottom:10px;">
+                    我的金额：8.88
+                </div>
+            </div>
+            <div style="background-color:#a19f9f;padding-left:10px;">
+                <span style="font-size:0.8em;">
+                    管理员管理
+                </span>
+            </div>
+            <div class="weui-grids">
+                <a href="/Role/Index" class="weui-grid js_grid">
+                    <div class="weui-grid__icon">
+                        <img src="~/Images/img1.png" alt="">
+                    </div>
+                    <p class="weui-grid__label">
+                        角色
+                    </p>
+                </a>
+                <a href="" class="weui-grid js_grid">
+                    <div class="weui-grid__icon">
+                        <img src="~/Images/img1.png" alt="">
+                    </div>
+                    <p class="weui-grid__label">
+                        权限
+                    </p>
+                </a>
+                <a href="/Admin/Index" class="weui-grid js_grid">
+                    <div class="weui-grid__icon">
+                        <img src="~/Images/img1.png" alt="新家风">
+                    </div>
+                    <p class="weui-grid__label">
+                        管理员
+                    </p>
+                </a>
+                <a href="" class="weui-grid js_grid">
+                    <div class="weui-grid__icon">
+                        <img src="~/Images/img1.png" alt="">
+                    </div>
+                    <p class="weui-grid__label">
+                        菜单
+                    </p>
+                </a>
+                <a href="" class="weui-grid js_grid">
+                    <div class="weui-grid__icon">
+                        <img src="~/Images/img1.png" alt="">
+                    </div>
+                    <p class="weui-grid__label">
+                        费用
+                    </p>
+                </a>
+                <a href="" class="weui-grid js_grid">
+                    <div class="weui-grid__icon">
+                        <img src="~/Images/img1.png" alt="">
+                    </div>
+                    <p class="weui-grid__label">
+                        设置
+                    </p>
+                </a>
+            </div>
+            <div style="background-color:#a19f9f;padding-left:10px;">
+                <span style="font-size:0.8em;">
+                    用户菜单
+                </span>
+            </div>
+        </div>
+        <div id="tab2" class="weui-tab__bd-item">
+            <h1>页面二</h1>
+        </div>
+        <div id="tab3" class="weui-tab__bd-item">
+            <h1>页面三</h1>
+        </div>
+        <div id="tab4" class="weui-tab__bd-item">
+            <h1>页面四</h1>
+        </div>
+    </div>
+    @{Html.RenderPartial("_Footer");}
+</div>

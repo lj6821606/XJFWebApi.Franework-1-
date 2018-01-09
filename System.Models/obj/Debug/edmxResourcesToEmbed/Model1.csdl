@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="XJFMessageModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="XJFAdmin">
+    <Key>
+      <PropertyRef Name="XJFAdminID" />
+    </Key>
+    <Property Name="XJFAdminID" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="XJFRoleID" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="XJFAdminLgoinName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="XJFAdminPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="XJFAdminEmall" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="XJFAdminPassWord" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="XJFAdminName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="XJFAdminHeader" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="XJFAdminSex" Type="Boolean" Nullable="false" />
+    <Property Name="XJFAdminWechatID" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="XJFAdminTencentID" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="XJFAdminAliPayID" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="XJFCreateID" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="XJFCreateTime" Type="DateTime" Precision="3" />
+    <Property Name="XJFUpdateID" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="XJFUpdateTime" Type="DateTime" Precision="3" />
+    <Property Name="XJFDelectID" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="XJFDelectTime" Type="DateTime" Precision="3" />
+    <Property Name="XJFStort" Type="Int32" Nullable="false" />
+    <Property Name="XJFStatu" Type="Boolean" />
+    <NavigationProperty Name="XJFRole" Relationship="Self.FK_XJFAdmin_XJFRole" FromRole="XJFAdmin" ToRole="XJFRole" />
+  </EntityType>
+  <EntityType Name="XJFAuthority">
+    <Key>
+      <PropertyRef Name="XJFAuthorityID" />
+    </Key>
+    <Property Name="XJFAuthorityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="XJFRoleID" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="XJFMenuID" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="XJFMenu" Relationship="Self.FK_XJFAuthority_XJFMenu" FromRole="XJFAuthority" ToRole="XJFMenu" />
+    <NavigationProperty Name="XJFRole" Relationship="Self.FK_XJFAuthority_XJFRole" FromRole="XJFAuthority" ToRole="XJFRole" />
+  </EntityType>
+  <EntityType Name="XJFMenu">
+    <Key>
+      <PropertyRef Name="XJFMenuID" />
+    </Key>
+    <Property Name="XJFMenuID" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="XJFMenuName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="XJFMenuWebURL" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="XJFMenuClass" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="XJFMenuImg" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="XJFMenuParentID" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="XJFCreateID" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="XJFCreateTime" Type="DateTime" Precision="3" />
+    <Property Name="XJFUpdateID" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="XJFUpdateTime" Type="DateTime" Precision="3" />
+    <Property Name="XJFDelectID" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="XJFDelectTime" Type="DateTime" Precision="3" />
+    <Property Name="XJFStort" Type="Int32" Nullable="false" />
+    <Property Name="XJFStatu" Type="Boolean" />
+    <NavigationProperty Name="XJFAuthority" Relationship="Self.FK_XJFAuthority_XJFMenu" FromRole="XJFMenu" ToRole="XJFAuthority" />
+  </EntityType>
+  <EntityType Name="XJFRole">
+    <Key>
+      <PropertyRef Name="XJFRoleID" />
+    </Key>
+    <Property Name="XJFRoleID" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="XJFRoleName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="XJFRoleRemarks" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="XJFCreateID" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="XJFCreateTime" Type="DateTime" Precision="3" />
+    <Property Name="XJFUpdateID" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="XJFUpdateTime" Type="DateTime" Precision="3" />
+    <Property Name="XJFDelectID" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="XJFDelectTime" Type="DateTime" Precision="3" />
+    <Property Name="XJFStort" Type="Int32" Nullable="false" />
+    <Property Name="XJFStatu" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="XJFAdmin" Relationship="Self.FK_XJFAdmin_XJFRole" FromRole="XJFRole" ToRole="XJFAdmin" />
+    <NavigationProperty Name="XJFAuthority" Relationship="Self.FK_XJFAuthority_XJFRole" FromRole="XJFRole" ToRole="XJFAuthority" />
+  </EntityType>
+  <Association Name="FK_XJFAdmin_XJFRole">
+    <End Role="XJFRole" Type="Self.XJFRole" Multiplicity="1" />
+    <End Role="XJFAdmin" Type="Self.XJFAdmin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="XJFRole">
+        <PropertyRef Name="XJFRoleID" />
+      </Principal>
+      <Dependent Role="XJFAdmin">
+        <PropertyRef Name="XJFRoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XJFAuthority_XJFMenu">
+    <End Role="XJFMenu" Type="Self.XJFMenu" Multiplicity="0..1" />
+    <End Role="XJFAuthority" Type="Self.XJFAuthority" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="XJFMenu">
+        <PropertyRef Name="XJFMenuID" />
+      </Principal>
+      <Dependent Role="XJFAuthority">
+        <PropertyRef Name="XJFMenuID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XJFAuthority_XJFRole">
+    <End Role="XJFRole" Type="Self.XJFRole" Multiplicity="0..1" />
+    <End Role="XJFAuthority" Type="Self.XJFAuthority" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="XJFRole">
+        <PropertyRef Name="XJFRoleID" />
+      </Principal>
+      <Dependent Role="XJFAuthority">
+        <PropertyRef Name="XJFRoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="XJFMessageEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="XJFAdmin" EntityType="Self.XJFAdmin" />
+    <EntitySet Name="XJFAuthority" EntityType="Self.XJFAuthority" />
+    <EntitySet Name="XJFMenu" EntityType="Self.XJFMenu" />
+    <EntitySet Name="XJFRole" EntityType="Self.XJFRole" />
+    <AssociationSet Name="FK_XJFAdmin_XJFRole" Association="Self.FK_XJFAdmin_XJFRole">
+      <End Role="XJFRole" EntitySet="XJFRole" />
+      <End Role="XJFAdmin" EntitySet="XJFAdmin" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XJFAuthority_XJFMenu" Association="Self.FK_XJFAuthority_XJFMenu">
+      <End Role="XJFMenu" EntitySet="XJFMenu" />
+      <End Role="XJFAuthority" EntitySet="XJFAuthority" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XJFAuthority_XJFRole" Association="Self.FK_XJFAuthority_XJFRole">
+      <End Role="XJFRole" EntitySet="XJFRole" />
+      <End Role="XJFAuthority" EntitySet="XJFAuthority" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

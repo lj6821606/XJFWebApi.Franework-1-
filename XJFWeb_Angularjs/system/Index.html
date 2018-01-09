@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="../wwwroot/css/index.css" rel="stylesheet" />
+    <link href="../Content/weui.min.css" rel="stylesheet" />
+    <link href="../Content/jquery-weui.min.css" rel="stylesheet" />
+    <link href="../wwwroot/css/index.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
+    <title>新家风短信平台</title>
+</head>
+<body ontouchstart>
+    <!--<header>
+        <embed type="text/html" src="footer.html" />
+    </header>-->
+    <div class="weui-tab">
+        <div class="weui-tab__bd">
+            <div id="tab1" class="weui-tab__bd-item weui-tab__bd-item--active">
+                <div style="text-align:center;">
+                    <img src="../wwwroot/images/img1.png" width="120" height="120" />
+                    <div style="margin-bottom:10px;">
+                        我的金额：8.88
+                    </div>
+                </div>
+                <div style="background-color:#a19f9f;padding-left:10px;">
+                    <span style="font-size:0.8em;">
+                        管理员管理
+                    </span>
+                </div>
+                <div class="weui-grids">
+                    <a href="Role.html" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../wwwroot/images/img1.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">
+                            角色
+                        </p>
+                    </a>
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../wwwroot/images/img1.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">
+                            权限
+                        </p>
+                    </a>
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../wwwroot/images/img1.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">
+                            管理员
+                        </p>
+                    </a>
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../wwwroot/images/img1.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">
+                            菜单
+                        </p>
+                    </a>
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../wwwroot/images/img1.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">
+                            费用
+                        </p>
+                    </a>
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../wwwroot/images/img1.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">
+                            设置
+                        </p>
+                    </a>
+                </div>
+                <div style="background-color:#a19f9f;padding-left:10px;">
+                    <span style="font-size:0.8em;">
+                        用户菜单
+                    </span>
+                </div>
+            </div>
+            <div id="tab2" class="weui-tab__bd-item">
+                <h1>页面二</h1>
+            </div>
+            <div id="tab3" class="weui-tab__bd-item">
+                <h1>页面三</h1>
+            </div>
+            <div id="tab4" class="weui-tab__bd-item">
+                <h1>页面四</h1>
+            </div>
+        </div>
+        <div class="weui-tabbar">
+            <a href="#tab1" class="weui-tabbar__item weui-bar__item--on first">
+                <div class="weui-tabbar__icon">
+                    <img class="tab_img" src="../wwwroot/images/icon8.png" data-img="../wwwroot/images/icon2.png" data-img-statu="0" alt="新家风">
+                </div>
+                <p class="weui-tabbar__label">菜单</p>
+            </a>
+            <a href="#tab2" class="weui-tabbar__item">
+                <div class="weui-tabbar__icon">
+                    <img class="tab_img" src="../wwwroot/images/icon4.png" data-img="../wwwroot/images/icon5.png" data-img-statu="0" alt="新家风">
+                </div>
+                <p class="weui-tabbar__label">通讯录</p>
+            </a>
+            <a href="#tab3" class="weui-tabbar__item">
+                <div class="weui-tabbar__icon">
+                    <img class="tab_img" src="../wwwroot/images/icon6.png" data-img="../wwwroot/images/icon7.png" data-img-statu="0" alt="新家风">
+                </div>
+                <p class="weui-tabbar__label">消息模版</p>
+            </a>
+            <a href="#tab4" class="weui-tabbar__item">
+                <div class="weui-tabbar__icon">
+                    <img class="tab_img" src="../wwwroot/images/icon9.png" data-img="../wwwroot/images/icon10.png" data-img-statu="0" alt="新家风">
+                </div>
+                <p class="weui-tabbar__label">我的</p>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
+<script src="../Scripts/jquery-3.2.1.min.js"></script>
+<script src="../Scripts/jquery-weui.min.js"></script>
+<script src="../Scripts/swiper.min.js"></script>
+<script src="../Scripts/vue.min.js"></script>
+<script>
+    //加载事件
+    $(document).ready(function () {
+        $(".weui-tabbar__item").click(function () {
+            var obj = $(this).find(".tab_img");
+            if ($(obj).attr("data-img-statu") == "1")
+                return false;
+            $(".weui-tabbar__item").each(function () {
+                var objimg = $(this).find(".tab_img");
+                if ($(objimg).attr("data-img-statu") == "1") {
+                    var old = $(objimg).attr("data-img");
+                    $(objimg).attr("data-img", $(objimg).attr("src"));
+                    $(objimg).attr("src", old);
+                    $(objimg).attr("data-img-statu", 0);
+                }
+            });
+            var oldsrc = $(obj).attr("data-img");
+            $(obj).attr("data-img", $(obj).attr("src"));
+            $(obj).attr("src", oldsrc);
+            $(obj).attr("data-img-statu", "1");
+        });
+        $(".first").click();
+    });
+</script>

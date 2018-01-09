@@ -1,0 +1,14 @@
+﻿* {
+    margin: 0px;
+    padding: 0px;
+}
+html {
+    height: 100%;
+}
+body {
+    font-size: 18px;
+    height: 100%;
+}
+div {
+    background-color: white;
+}

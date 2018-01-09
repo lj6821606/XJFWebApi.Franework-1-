@@ -1,0 +1,6 @@
+F:\VSProject\XJFWebApi.Franework\Encryption\bin\Debug\Encryption.dll
+F:\VSProject\XJFWebApi.Franework\Encryption\bin\Debug\Encryption.pdb
+F:\VSProject\XJFWebApi.Franework\Encryption\obj\Debug\Encryption.csprojResolveAssemblyReference.cache
+F:\VSProject\XJFWebApi.Franework\Encryption\obj\Debug\Encryption.csproj.CoreCompileInputs.cache
+F:\VSProject\XJFWebApi.Franework\Encryption\obj\Debug\Encryption.dll
+F:\VSProject\XJFWebApi.Franework\Encryption\obj\Debug\Encryption.pdb

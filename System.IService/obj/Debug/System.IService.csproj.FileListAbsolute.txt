@@ -1,0 +1,7 @@
+F:\VSProject\XJFWebApi.Franework\System.IService\bin\Debug\System.IService.dll
+F:\VSProject\XJFWebApi.Franework\System.IService\bin\Debug\System.IService.pdb
+F:\VSProject\XJFWebApi.Franework\System.IService\bin\Debug\Request.Models.dll
+F:\VSProject\XJFWebApi.Franework\System.IService\bin\Debug\Request.Models.pdb
+F:\VSProject\XJFWebApi.Franework\System.IService\obj\Debug\System.IService.csproj.CoreCompileInputs.cache
+F:\VSProject\XJFWebApi.Franework\System.IService\obj\Debug\System.IService.dll
+F:\VSProject\XJFWebApi.Franework\System.IService\obj\Debug\System.IService.pdb
